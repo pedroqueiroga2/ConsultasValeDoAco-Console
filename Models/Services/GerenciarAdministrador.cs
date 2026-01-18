@@ -15,8 +15,8 @@ internal class GerenciarAdministrador
         _adm = adm;
     }
     
-    public void TrocarSenha(string novaSenha) 
-    {
-        _adm.Senha = novaSenha;
-    }
+    //public void TrocarSenha(string novaSenha) 
+    //{
+    //    _adm.Senha = novaSenha;
+    //}
 }

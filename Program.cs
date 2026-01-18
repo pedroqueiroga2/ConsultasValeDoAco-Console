@@ -12,19 +12,18 @@ AgendarConsulta consulta = new();
 RegistrarMedico registrarMedico = new();
 RegistrarAdministrador registrarAdministrador = new();
 Dictionary<string, Medico> medicoNomeRegistrado = new();
-
-registrarAdministrador.CriarNovoAdm("novo", "aaa");
+Cliente c1 = new("dad", "Pedro", 19);
 
 Dictionary<string, Cliente> pacienteNomeRegistrado = new();
 Dictionary<string, Administrador> AdministradorRegistrados = new();
 
+//pacienteNomeRegistrado.Add(c1.Nome, c1);
 
-
-string senha = Console.ReadLine();
-if (AdministradorRegistrados.ContainsKey(senha)) 
-{
-    MenuAdministrador menuAdm = new();
-}
+//string senha = Console.ReadLine();
+//if (AdministradorRegistrados.ContainsKey(senha)) 
+//{
+//    MenuAdministrador menuAdm = new();
+//}
 
 void ExibirLogo() 
 {

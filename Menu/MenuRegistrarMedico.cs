@@ -29,8 +29,16 @@ internal class MenuRegistrarMedico
         Console.WriteLine("Informe a especialidade do médico: ");
         string novoMedicoEspecialidade = Console.ReadLine();
 
-        medicoNomeRegistrado.Add(novoMedicoNome, _register.RegistroMedico(novoMedicoCrm, 
+        try
+        {
+            medicoNomeRegistrado.Add(novoMedicoNome, _register.RegistroMedico(novoMedicoCrm,
             novoMedicoEspecialidade, novoMedicoNome, novoMedicoIdade));
+        }
+        catch (Exception error) 
+        {
+            Console.WriteLine($"Erro ao registrar o médico {error.Message }");
+        }
+        
 
     }
 }

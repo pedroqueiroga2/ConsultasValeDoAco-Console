@@ -8,7 +8,7 @@ using ConsoleApp1.Models.Services;
 
 namespace ConsoleApp1.Menu;
 
-internal class MenuAgendarConsulta : Menu
+internal class MenuAgendarConsulta : MenuPrincipal
 {
 
 
