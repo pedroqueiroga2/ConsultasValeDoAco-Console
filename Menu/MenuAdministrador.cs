@@ -6,17 +6,14 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Menu;
 
-internal class Menu
+internal class MenuAdministrador
 {
-
     public static void MenuPrincipal() 
     {
-        Console.WriteLine("\nBem vindo ao Consultas vale do Aço!\n" +
-            "1 - Marcar consulta\n" +
+        Console.WriteLine(" \"1 - Marcar consulta\n" +
             "2 - Listar consultas\n" +
             "3 - Registrar medico\n" +
             "4 - Listagem medico\n" +
-            "5 - Para se registrar");
+            "5 - Para se registrar\n");
     }
-
 }

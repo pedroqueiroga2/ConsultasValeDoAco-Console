@@ -5,21 +5,28 @@ using ConsoleApp1.Models;
 using ConsoleApp1.Menu;
 using ConsoleApp1.Models.Services;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using ConsoleApp1.Models.Data;
 
 
 AgendarConsulta consulta = new();
 RegistrarMedico registrarMedico = new();
 
 Dictionary<string, Medico> medicoNomeRegistrado = new();
+
+Medico m1 = new("1232", "teste", "Lucas", 19);
+medicoNomeRegistrado.Add(m1.Nome, m1);
+
+
 Dictionary<string, Cliente> pacienteNomeRegistrado = new();
+Dictionary<string, Administrador> AdministradorRegistrados = new();
+Administrador adm1 = new("Administrador", "Administrador", 99);
+AdministradorRegistrados.Add(adm1.Senha, adm1);
 
-
-
-//Medico m1 = new("980", "Dermatologista", "Pedro", 35);
-//Cliente c1 = new("09201", "Lucas", 19);
-//pacienteNomeRegistrado.Add(c1.Nome, c1);
-//medicoNomeRegistrado.Add(m1.Nome, m1);
-
+//string senha = Console.ReadLine();
+//if (AdministradorRegistrados.ContainsKey(senha)) 
+//{
+//    Console.WriteLine("Deu bom");
+//}
 
 void ExibirLogo() 
 {
@@ -37,36 +44,15 @@ ExibirLogo();
 
 while (true)
 {
-    Menu.MenuPrincipal();
+    MenuPrincipal.MenuOpcoes();
     int op = int.Parse(Console.ReadLine());
 
 
 switch (op) 
 {
     case 1:
-        Console.WriteLine("Informe o nome do Médico");
-           
-            string nomeMedico = Console.ReadLine();
-            if (medicoNomeRegistrado.ContainsKey(nomeMedico))
-            {
-
-                Console.WriteLine($"Informe seu nome: ");
-                string nome = Console.ReadLine();
-                if (pacienteNomeRegistrado.ContainsKey(nome))
-                {
-
-                    DateTime data = DateTime.Now;
-                    Console.WriteLine($"Consulta realizada com o médico {nomeMedico}\n às {data}");
-
-                    
-                    consulta.RegistrarConsulta(medicoNomeRegistrado[nomeMedico], pacienteNomeRegistrado[nome], data );
-                    
-                }
-
-            }
-            else {
-                Console.WriteLine("Não possuímos esse Médico em nosso cadastro.");
-            }
+            MenuAgendarConsulta m2 = new MenuAgendarConsulta();
+            m2.Executar(medicoNomeRegistrado, pacienteNomeRegistrado);
 
             break;
             case 2:
@@ -75,16 +61,8 @@ switch (op)
 
             case 3:
 
-                Console.WriteLine("Informe o nome do médico: ");
-                string novoMedicoNome= Console.ReadLine();
-                Console.WriteLine("Informe a CRM do médico: ");
-                string novoMedicoCrm = Console.ReadLine();
-                Console.WriteLine("Informe a idade do médico: ");
-                short novoMedicoIdade = short.Parse(Console.ReadLine());
-                Console.WriteLine("Informe a especialidade do médico: ");
-                string novoMedicoEspecialidade = Console.ReadLine();
-
-                registrarMedico.RegistroMedico(novoMedicoCrm, novoMedicoEspecialidade, novoMedicoNome, novoMedicoIdade);
+                MenuRegistrarMedico m3 = new(registrarMedico);
+            m3.Executar(medicoNomeRegistrado);
             
                 break;
             case 4:

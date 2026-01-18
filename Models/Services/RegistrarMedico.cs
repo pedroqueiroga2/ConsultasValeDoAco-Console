@@ -8,10 +8,13 @@ namespace ConsoleApp1.Models.Services;
 
 internal class RegistrarMedico
 {
+    
     private List<Medico> medicos = new();
-    public void RegistroMedico(string crm, string especialidade, string nome,  short idade)
+    public Medico RegistroMedico(string crm, string especialidade, string nome,  short idade)
     {
-        medicos.Add(new Medico(crm, especialidade, nome, idade));
+        Medico m1 = new Medico(crm, especialidade, nome, idade);
+        medicos.Add(m1);
+        return m1;
     }
 
     public List<Medico> Listar() 
