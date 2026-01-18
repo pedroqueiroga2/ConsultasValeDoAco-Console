@@ -10,23 +10,21 @@ using ConsoleApp1.Models.Data;
 
 AgendarConsulta consulta = new();
 RegistrarMedico registrarMedico = new();
-
+RegistrarAdministrador registrarAdministrador = new();
 Dictionary<string, Medico> medicoNomeRegistrado = new();
 
-Medico m1 = new("1232", "teste", "Lucas", 19);
-medicoNomeRegistrado.Add(m1.Nome, m1);
-
+registrarAdministrador.CriarNovoAdm("novo", "aaa");
 
 Dictionary<string, Cliente> pacienteNomeRegistrado = new();
 Dictionary<string, Administrador> AdministradorRegistrados = new();
-Administrador adm1 = new("Administrador", "Administrador", 99);
-AdministradorRegistrados.Add(adm1.Senha, adm1);
 
-//string senha = Console.ReadLine();
-//if (AdministradorRegistrados.ContainsKey(senha)) 
-//{
-//    Console.WriteLine("Deu bom");
-//}
+
+
+string senha = Console.ReadLine();
+if (AdministradorRegistrados.ContainsKey(senha)) 
+{
+    MenuAdministrador menuAdm = new();
+}
 
 void ExibirLogo() 
 {

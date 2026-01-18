@@ -7,12 +7,17 @@ namespace ConsoleApp1.Models;
 
 internal class Administrador
 {
-    public Administrador(string usuário)
+    private Administrador(string usuário, string senha)
     {
         Usuário = usuário;
-        Senha = "Adm123";
+        Senha = senha;
     }
 
-    private string Usuário { get;}
-    public string Senha { get;} 
+    private string Usuário { get;  set; }
+    protected string Senha { get;   set; }
+
+    internal static Administrador Criar(string usuario, string senha) 
+    {
+        return new Administrador(usuario, senha);
+    }
 }

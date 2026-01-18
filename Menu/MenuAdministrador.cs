@@ -14,6 +14,7 @@ internal class MenuAdministrador
             "2 - Listar consultas\n" +
             "3 - Registrar medico\n" +
             "4 - Listagem medico\n" +
-            "5 - Para se registrar\n");
+            "5 - Para se registrar\n" +
+            "6 - Registrar novo Administrador");
     }
 }
